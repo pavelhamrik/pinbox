@@ -1,0 +1,2 @@
+# pinbox
+A personal inbox
