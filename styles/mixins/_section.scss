@@ -1,0 +1,5 @@
+@import 'responsive-attr';
+
+@mixin section($vertical-padding: 2rem, $horizontal-padding: 1rem) {
+    @include responsive-attr(padding, ($vertical-padding $horizontal-padding), 0.5);
+}

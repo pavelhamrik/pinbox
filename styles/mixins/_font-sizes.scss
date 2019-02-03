@@ -1,0 +1,10 @@
+@import '../settings';
+@import '../mixins/breakpoints';
+
+@mixin font-sizes($stack, $tag) {
+    @each $group, $attrs in $stack {
+        @include breakpoint($group) {
+            font-size: map-get($attrs, $tag);
+        }
+    }
+}

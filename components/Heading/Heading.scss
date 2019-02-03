@@ -1,0 +1,17 @@
+@import '../../styles/settings';
+@import '../../styles/mixins/breakpoints';
+
+@each $group, $attrs in $headings {
+    @include breakpoint($group) {
+        @each $tag, $size in $attrs {
+            .#{$tag} {
+                font-size: $size;
+                line-height: $headings-line-height;
+            }
+        }
+    }
+}
+
+.h1 {
+    text-transform: uppercase;
+}

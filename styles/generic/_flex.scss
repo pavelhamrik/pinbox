@@ -1,0 +1,44 @@
+@import '../settings';
+@import '../mixins/breakpoints';
+
+.flex {
+    display: flex;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+@each $alignment in $flex-align-items {
+    @each $screen, $size in $breakpoints {
+        @include breakpoint(#{$screen}) {
+            .align-items-#{$screen}-#{$alignment} {
+                align-items: $alignment;
+            }
+        }
+    }
+}
+
+@each $alignment in $flex-align-content {
+    @each $screen, $size in $breakpoints {
+        @include breakpoint(#{$screen}) {
+            .align-content-#{$screen}-#{$alignment} {
+                align-content: $alignment;
+            }
+        }
+    }
+}
+
+@each $alignment in $flex-justify-content {
+    @each $screen, $size in $breakpoints {
+        @include breakpoint(#{$screen}) {
+            .justify-content-#{$screen}-#{$alignment} {
+                justify-content: $alignment;
+            }
+        }
+    }
+}

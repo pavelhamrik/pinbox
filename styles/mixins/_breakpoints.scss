@@ -1,0 +1,14 @@
+@import '../settings';
+
+@mixin breakpoint($screen) {
+    @media only screen and (min-width: map-get($breakpoints, $screen)) {
+        @content;
+    }
+}
+
+
+@mixin breakpoint-small-only {
+    @media only screen and (max-width: map-get($breakpoints, small) - 1) {
+        @content;
+    }
+}

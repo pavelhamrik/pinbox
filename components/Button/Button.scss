@@ -1,0 +1,135 @@
+@import '../../styles/settings';
+@import '../../styles/functions';
+
+.button {
+    border-radius: $border-radius;
+    border: 0.0625rem solid map-get($colors, primary);
+    box-shadow: $button-shadow;
+    color: map-get($colors, primary);
+    cursor: pointer;
+    display: inline-block;
+    font-size: $small-font-size;
+    line-height: 1;
+    padding: $button-padding;
+    position: relative;
+    text-decoration: none;
+    transition: $hover-transition;
+
+    &:hover,
+    &:focus {
+        box-shadow: $raised-shadow;
+        color: $white;
+        background-color: map-get($colors, primary);
+        outline: none;
+    }
+}
+
+.button-link {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    color: map-get($colors, primary);
+    display: inline;
+    padding: $inline-button-padding;
+    box-shadow: none;
+    font-size: inherit;
+
+    &:hover,
+    &:focus {
+        background-color: transparent;
+        box-shadow: inset 0 -0.125rem 0 rgba(map-get($colors, primary), 0.75);
+        color: map-get($colors, primary);
+    }
+}
+
+.button-heading {
+    border: 0;
+    border-radius: 0;
+    display: inline;
+    padding: 0;
+    box-shadow: none;
+    color: inherit;
+
+    &:hover,
+    &:focus {
+        color: map-get($colors, primary);
+    }
+}
+
+.button-bar {
+    border-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: $font-size;
+    //font-weight: $font-weight-bold;
+    padding: multiply-list($button-padding, (1, 0.5));
+
+    &:hover,
+    &:focus {
+        background-color: transparent;
+        box-shadow: 0 0.1875rem 0 rgba(map-get($colors, primary), 1);
+        color: map-get($colors, primary);
+    }
+
+    &.button-active {
+        color: $black;
+    }
+}
+
+.button-image {
+    border: 0;
+    padding: 0;
+    box-shadow: none;
+    display: block;
+    position: relative;
+    transition:
+        $hover-transition,
+        filter $lightning-speed $default-easing;
+
+    &:after {
+        align-items: center;
+        background-color: map-get($colors, primary);
+        content: '';
+        display: flex;
+        font-size: $large-font-size;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        transition: $hover-transition;
+    }
+
+    &:hover,
+    &:focus {
+        filter: saturate(75%) contrast(150%) brightness(90%);
+
+        &:after {
+            opacity: 0.7;
+            filter: saturate(165%);
+        }
+    }
+}
+
+.button-arrowed {
+    &:hover:after,
+    &:focus:after {
+        content: ' →';
+    }
+
+    &.button-active {
+        color: $black;
+    }
+}
+
+.button-small {
+    font-size: $small-font-size;
+    padding: $small-button-padding;
+}
+
+.button-large {
+    font-size: $large-font-size;
+    padding: $large-button-padding;
+}

@@ -1,0 +1,12 @@
+@import '../settings';
+@import '../mixins/breakpoints';
+
+@for $order from -1 through 3 {
+    @each $screen, $size in $breakpoints {
+        @include breakpoint(#{$screen}) {
+            .order-#{$screen}-#{$order} {
+                order: $order;
+            }
+        }
+    }
+}

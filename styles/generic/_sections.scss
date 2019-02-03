@@ -1,0 +1,12 @@
+@import '../settings';
+@import '../mixins/responsive-attr';
+@import '../mixins/section';
+
+.section {
+    @include section;
+}
+
+.main-section {
+    @include section;
+    @include responsive-attr(padding-top, 0, 0);
+}

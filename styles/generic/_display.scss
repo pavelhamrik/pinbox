@@ -1,0 +1,12 @@
+@import '../settings';
+@import '../mixins/breakpoints';
+
+@each $display in $displays {
+    @each $screen, $size in $breakpoints {
+        @include breakpoint(#{$screen}) {
+            .display-#{$screen}-#{$display} {
+                display: $display;
+            }
+        }
+    }
+}

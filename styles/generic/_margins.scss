@@ -1,0 +1,39 @@
+@import '../settings';
+@import '../mixins/breakpoints';
+
+$vertical-margins: (top, bottom);
+$horizontal-margins: (right, left);
+
+$margins: (
+    ('-1', -1),
+    ('-05', -0.5),
+    ('0', 0),
+    ('05', 0.5),
+    ('1', 1),
+    ('2', 2),
+    ('3', 2),
+);
+
+@each $label, $factor in $margins {
+    @each $margin in $vertical-margins {
+        .margin-#{$margin}-#{$label} {
+            margin-#{$margin}: $vertical-margin * $factor;
+        }
+    }
+
+    @each $margin in $horizontal-margins {
+        .margin-#{$margin}-#{$label} {
+            margin-#{$margin}: $horizontal-margin * $factor;
+        }
+    }
+
+    .margin-vertical-#{$label} {
+        margin-top: $vertical-margin * $factor;
+        margin-bottom: $vertical-margin * $factor;
+    }
+
+    .margin-horizontal-#{$label} {
+        margin-top: $horizontal-margin * $factor;
+        margin-bottom: $horizontal-margin * $factor;
+    }
+}

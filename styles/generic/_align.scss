@@ -1,0 +1,12 @@
+@import '../settings';
+@import '../mixins/breakpoints';
+
+@each $alignment in $alignments {
+    @each $screen, $size in $breakpoints {
+        @include breakpoint(#{$screen}) {
+            .text-align-#{$screen}-#{$alignment} {
+                text-align: $alignment;
+            }
+        }
+    }
+}

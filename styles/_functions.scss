@@ -1,0 +1,24 @@
+@function multiply-list-by-number($list, $factor) {
+    $results: ();
+    @each $item in $list {
+        $results: append($results, $item * $factor, space);
+    }
+    @return $results;
+}
+
+@function multiply-list($baseList, $factorList) {
+    @if length($factorList) == 1 {
+        @return multiply-list-by-number($baseList, nth($factorList, 1));
+    }
+
+    @if length($baseList) != length($factorList) {
+        @warn 'multiply-list-by-list: Lists must be of the same length, the 2nd argument can be a single number.';
+        @return $baseList;
+    }
+
+    $results: ();
+    @for $i from 1 through length($baseList) {
+        $results: append($results, nth($baseList, $i) * nth($factorList, $i), space);
+    }
+    @return $results;
+}

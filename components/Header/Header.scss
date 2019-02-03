@@ -1,0 +1,7 @@
+@import '../../styles/settings';
+@import '../../styles/mixins/section';
+
+.header {
+    color: #706fd3;
+    @include section(1rem);
+}
