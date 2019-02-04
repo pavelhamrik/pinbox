@@ -11,14 +11,16 @@
         "url": "http://www.pavelhamrik.com"
     },
     "scripts": {
-        "dev": "next",
+        "dev": "node server.js",
         "build": "next build",
-        "start": "next start -p $PORT",
-        "start-local": "next start",
+        "start": "NODE_ENV=production node server.js -p $PORT",
+        "start-local": "NODE_ENV=production node server.js",
         "heroku-postbuild": "next build"
     },
     "dependencies": {
         "@zeit/next-sass": "^1.0.1",
+        "dotenv": "^6.2.0",
+        "express": "^4.16.4",
         "js-cookie": "^2.2.0",
         "next": "^7.0.2",
         "next-redux-wrapper": "^2.1.0",

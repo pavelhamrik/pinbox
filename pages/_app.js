@@ -11,7 +11,7 @@ import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 import '../styles/app.scss'
 
-ReactGA.initialize('UA-9799491-13');
+ReactGA.initialize('UA-130424963-2');
 
 const reduxLogger = createLogger({
     diff: true,

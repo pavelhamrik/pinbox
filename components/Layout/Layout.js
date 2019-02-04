@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import * as ReactGA from 'react-ga';
 import Head from 'next/head';
-import Footer from '../Footer/Footer';
+// import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import layoutStyles from './Layout.scss';
 

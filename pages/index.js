@@ -6,10 +6,12 @@ import Layout from '../components/Layout/Layout';
 
 import sections from '../styles/generic/_sections.scss';
 import {SITE_TITLE} from '../constants/constants';
+import Console from '../components/Console/Console';
 
 class Index extends Component {
     static getInitialProps({store, isServer, pathname}) {
         if (isServer) store.dispatch({type: 'SET_SERVER_PATHNAME', payload: pathname});
+        store.dispatch({type: 'PING'});
     }
 
     render() {
@@ -20,6 +22,7 @@ class Index extends Component {
                         <ul>
                             <li><span style={{color: '#34ace0'}}>&rarr;</span> Hello <span style={{color: '#ff793f'}}>there</span></li>
                         </ul>
+                        <Console/>
                     </GridItem>
                 </Grid>
             </Layout>
